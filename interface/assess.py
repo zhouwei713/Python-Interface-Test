@@ -3,6 +3,7 @@ created on 20181012
 @author: zhou
 '''
 
+
 def Assess_in(except_data, result_data):
     if len(except_data.split('=')) > 1:
         data = dict([except_data.split('=')])

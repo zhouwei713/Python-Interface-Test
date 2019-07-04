@@ -1,9 +1,10 @@
-'''
+"""
 created on 20181012
 @author: zhou
-'''
+"""
 
 import xlrd
+
 
 def data(filepath):
     try:
@@ -27,7 +28,7 @@ def data(filepath):
             testexcept.append(page.cell(i, 6).value)
         return testid, testname, testkey, testparam, testurl, testmode, testexcept
     except Exception as e:
-        print('open case data error: %s' %e)
+        print('open case data error: %s' % e)
         return
 
 
