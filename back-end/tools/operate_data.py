@@ -22,7 +22,7 @@ class OperateExcelData(object):
         return ExcelConfData.automated
 
     def get_header(self):
-        pass
+        return ExcelConfData.header
 
     def get_data(self):
         return ExcelConfData.data
@@ -41,6 +41,9 @@ class OperateExcelData(object):
 
     def get_caseuniqueid(self):
         return ExcelConfData.caseuniqueid
+
+    def get_authtype(self):
+        return ExcelConfData.authtype
 
 
 class OperateJsonData(object):

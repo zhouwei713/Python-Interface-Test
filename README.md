@@ -1,2 +1,2 @@
 # Python Interface Test
-python v2.7
+python 3

@@ -10,9 +10,14 @@ from tools.operate_data import OperateExcelData
 
 
 class GetExcelData(object):
-    def __init__(self, filename=None):
-        self.operate_excel = OperationExcel(filename)
+    def __init__(self, filename=None, sheet_id=0):
+        self.operate_excel = OperationExcel(filename, sheet_id)
         self.operate_data = OperateExcelData()
+
+    # 获取 sheet 个数
+    def get_sheets(self):
+        sheet_num = self.operate_excel.get_sheets()
+        return len(sheet_num)
 
     # 获取 excel 行数，即用例个数
     def get_case_lines(self):
@@ -73,7 +78,20 @@ class GetExcelData(object):
             caseuniqueid = int(caseuniqueid)
         return str(caseuniqueid)
 
+    # 获取 header 信息
+    def get_header(self, row):
+        col = int(self.operate_data.get_header())
+        header = self.operate_excel.get_cell_value(row, col)
+        return header
+
+    # 获取是否需要鉴权信息
+    def get_authtype(self, row):
+        col = int(self.operate_data.get_authtype())
+        authtype = self.operate_excel.get_cell_value(row, col)
+        return authtype
+
 
 if __name__ == '__main__':
     data = GetExcelData()
     print(data.get_case_lines())
+    print(data.get_sheets())

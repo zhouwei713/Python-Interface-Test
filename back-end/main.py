@@ -10,7 +10,6 @@ from interface.get_excel import data
 import os
 import datetime
 import time
-from tools.get_data import GetExcelData
 
 
 def start_test():
@@ -31,8 +30,6 @@ if __name__ == '__main__':
     import pytest
     pytest.main(['-s', '-q', '-vv', '--html=./report/report.html', '--self-contained-html'])
     # pytest --html=report.html --self-contained-html  生成独立的测试报告
-    # data = GetExcelData(filename='case1.xlsx')
-    # print(data.get_case_lines())
     # start_test()
     # testinterface()
 
